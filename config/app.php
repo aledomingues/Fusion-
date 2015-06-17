@@ -26,7 +26,7 @@ return [
 	|
 	*/
 
-	'url' => 'http://fusion.videojobs.dev',
+	'url' => env('APP_URL', 'http://fusion.videojobs.dev'),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -194,5 +194,7 @@ return [
 		'View'      => 'Illuminate\Support\Facades\View',
 
 	],
+
+	'apiPath' => env('API_PATH', 'bora.videojobs.dev/v1/'),
 
 ];
