@@ -34,5 +34,5 @@
 @endsection
 
 @section('vj-js')
-    <script type="text/javascript" src="{{ URL::asset('js/vj-login.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/vj-login.js')}}"></script>
 @endsection
