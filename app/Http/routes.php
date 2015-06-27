@@ -29,6 +29,7 @@ Route::get('register', function(){
 //Users
 Route::get('login', 'UsersController@login');
 Route::post('login', 'UsersController@doLogin');
+Route::get('logout', 'UsersController@logout');
 //Route::get('profile', 'UsersController@profile');
 Route::get('profile', function(){
 	return View::make('users.profile');

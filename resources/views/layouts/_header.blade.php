@@ -12,10 +12,15 @@
         <li><a href="{{url('/conheca')}}">Conheça o Vídeo Jobs</a></li>
         <li><a href="{{url('/vantagens')}}">Vantagens</a></li>
         <li><a href="{{url('/contato')}}">Contato</a></li>
-        <li class="login"><a href="{{url('/home')}}">Entrar</a></li>
+        @if (\Session::get('isLogged'))
+          <li class="login"><a href="{{url('/logout')}}">Sair</a></li>
+        @else
+          <li class="login"><a href="{{url('/login')}}">Entrar</a></li>
+        @endif
+        
       </ul>
     </div>
 
   @if (\Session::get('isLogged'))
-    teste
+    {{\Session::get('userData')->name}}
   @endif
