@@ -16,3 +16,6 @@
       </ul>
     </div>
 
+  @if (\Session::get('isLogged'))
+    teste
+  @endif
