@@ -21,6 +21,15 @@ Route::get('register', function(){
 	return View::make('auth.register');
 });
 
+
+//Users
+Route::get('login', 'UsersController@login');
+Route::post('login', 'UsersController@doLogin');
+Route::get('profile', 'UsersController@profile');
+
+//Companies
+
+
 Route::get('conheca', function(){
 	return View::make('layouts.conheca');
 });
