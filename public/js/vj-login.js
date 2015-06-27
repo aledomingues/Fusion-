@@ -10,7 +10,7 @@ $(document).ready(function() {
 			data: data,
 			cache: false,
 			dataType: "json",
-			success: function(data) {console.log(data); return false;
+			success: function(data) {
 				window.parent.location.href = data.redirect;
 			},
 			error: function(data) {
