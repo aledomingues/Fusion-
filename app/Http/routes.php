@@ -17,8 +17,20 @@ Route::get('home', 'HomeController@index');
 
 Route::get('demonstracao', 'DemoController@index');
 
+Route::get('contato', function(){
+	return View::make('layouts.contato');
+});
+
 Route::get('register', function(){
 	return View::make('auth.register');
+});
+
+Route::get('password', function(){
+	return View::make('auth.password');
+});
+
+Route::get('profile', function(){
+	return View::make('users.profile');
 });
 
 Route::get('conheca', function(){
