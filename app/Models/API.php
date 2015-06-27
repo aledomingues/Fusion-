@@ -6,7 +6,7 @@ abstract class API
 	protected $credentials;
 
 	public static function post($url, $data){
-		$data = json_encode($data);
+		//$data = json_encode($data);
 		return self::dispatchRequest('POST', $url, $data);
 	}
 
@@ -55,7 +55,7 @@ abstract class API
 	}
 
 	public function getUrl(){
-		return Config::get($this->url);
+		return \Config::get($this->url);
 	}
 
 	public function getCredentials(){
