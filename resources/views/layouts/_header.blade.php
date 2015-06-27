@@ -9,7 +9,7 @@
 
     <div class="collapse navbar-collapse" id="navbar-top">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="{{url('/conheca')}}">Conheça a Vídeo Jobs</a></li>
+        <li><a href="{{url('/conheca')}}">Conheça o Vídeo Jobs</a></li>
         <li><a href="{{url('/vantagens')}}">Vantagens</a></li>
         <li><a href="{{url('/contato')}}">Contato</a></li>
         <li class="login"><a href="{{url('/home')}}">Entrar</a></li>

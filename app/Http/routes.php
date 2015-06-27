@@ -17,6 +17,10 @@ Route::get('home', 'HomeController@index');
 
 Route::get('demonstracao', 'DemoController@index');
 
+Route::get('contato', function(){
+	return View::make('layouts.contato');
+});
+
 Route::get('register', function(){
 	return View::make('auth.register');
 });
@@ -25,10 +29,15 @@ Route::get('register', function(){
 //Users
 Route::get('login', 'UsersController@login');
 Route::post('login', 'UsersController@doLogin');
-Route::get('profile', 'UsersController@profile');
+//Route::get('profile', 'UsersController@profile');
+Route::get('profile', function(){
+	return View::make('users.profile');
+});
+Route::get('password', function(){
+	return View::make('auth.password');
+});
 
 //Companies
-
 
 Route::get('conheca', function(){
 	return View::make('layouts.conheca');

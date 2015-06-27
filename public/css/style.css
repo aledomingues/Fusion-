@@ -1,7 +1,20 @@
 /* Geral */
 
+a{
+	color: #1b80b3;
+}
+
+a:hover{
+	color: #E56B24;
+}
+
 .blue{
 	background: #1b80b3;
+	color: #fff;
+}
+
+.blue:hover{
+	background: #E56B24;
 	color: #fff;
 }
 
@@ -70,6 +83,11 @@ h1.logo{
 	width: 35%;
 }
 
+.form-control{
+	border: 1px solid #1b80b3;
+	color: #1b80b3;
+}
+
 /* Menu */
 .navbar{
 
@@ -95,13 +113,19 @@ h1.logo{
 	padding: 0;
 }
 
+#navbar-top .login a:hover,
+#navbar-top .login:hover{
+	background: #E56B24;
+	color: #fff;
+}
+
 #navbar-top a{
 	color: #1b80b3;
 	font-size: 18px;
 }
 
 #navbar-top a:hover{
-	color: #000;
+	color: #E56B24;
 }
 
 #navbar-bottom a{
@@ -109,7 +133,7 @@ h1.logo{
 }
 
 #navbar-bottom a:hover{
-	color: #000;
+	color: #E56B24;
 	text-decoration: underline;
 }
 
@@ -125,4 +149,34 @@ h1.logo{
 footer{
 	background: #fff;
 	border-top: 1px solid #1b80b3
+}
+
+@media screen and (min-width: 1024px) and(max-width: 1280px){
+
+}
+
+@media screen and (max-width:600px){
+
+/* Login */
+
+.login-form{
+	background: rgba(255,255,255,0.8);
+	border: 1px solid #1b80b3;
+	border-radius: 6px;
+	padding: 40px 15px;
+	width: 90%;	
+}
+
+.login-principal{
+	float: none;
+	margin: 20px auto 0;
+}
+
+/* Content */
+.content{
+	background: url('/img/mulher.jpg') no-repeat center top;
+	background-size: 150%;
+	min-height: 600px;
+}
+
 }
