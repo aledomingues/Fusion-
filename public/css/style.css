@@ -1,0 +1,128 @@
+/* Geral */
+
+.blue{
+	background: #1b80b3;
+	color: #fff;
+}
+
+/* Header */
+
+header{
+	background: #fff;
+	border-bottom: 1px solid #1b80b3;
+}
+
+h1.logo{
+	margin: 0;
+	position: relative;
+	z-index: 5;
+}
+
+/* Home */
+
+.intro-section{
+	float: right;
+	padding: 130px 0 0;
+	max-width: 425px;
+}
+
+.intro{
+	color: #1b80b3;
+	font-size: 55px;
+	line-height: 65px;
+}
+
+.slogan{
+	color: #000;
+	font-size: 22px;
+	padding-bottom: 20px;
+}
+
+#download-button .btn{
+	background: #f58634; /* Old browsers */
+	background: -moz-linear-gradient(top,  #f58634 0%, #f56d02 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f58634), color-stop(100%,#f56d02)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #f58634 0%,#f56d02 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #f58634 0%,#f56d02 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #f58634 0%,#f56d02 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #f58634 0%,#f56d02 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f58634', endColorstr='#f56d02',GradientType=0 ); /* IE6-9 */
+	border: none;
+	color: #fff;
+}
+
+/* Login */
+
+.login-form{
+	background: #fff;
+	border: 1px solid #1b80b3;
+	border-radius: 6px;
+	padding: 40px 15px;
+	width: 35%;	
+}
+
+.login-principal{
+	float: right;
+	margin: 120px 40px 0 0;
+}
+
+.forget-password{
+	width: 35%;
+}
+
+/* Menu */
+.navbar{
+
+}
+
+.navbar-default{
+	background: none;
+	border:none;
+	margin: 20px 0 0;
+}
+
+#navbar-top .login{
+	background: #1b80b3;
+	border: 0;
+	border-radius: 4px;
+	margin: 10px 0 0 10px;
+	padding: 5px 20px;
+}
+
+#navbar-top .login a{
+	color: #fff;
+	font-size: 14px;
+	padding: 0;
+}
+
+#navbar-top a{
+	color: #1b80b3;
+	font-size: 18px;
+}
+
+#navbar-top a:hover{
+	color: #000;
+}
+
+#navbar-bottom a{
+	color: #1b80b3;
+}
+
+#navbar-bottom a:hover{
+	color: #000;
+	text-decoration: underline;
+}
+
+/* Content */
+.content{
+	background: url('/img/mulher.jpg') no-repeat 0px -100px;
+	background-size: 100%;
+	min-height: 600px;
+}
+
+/* Footer */
+
+footer{
+	background: #fff;
+	border-top: 1px solid #1b80b3
+}
