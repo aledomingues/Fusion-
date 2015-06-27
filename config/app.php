@@ -195,6 +195,6 @@ return [
 
 	],
 
-	'apiPath' => env('API_PATH', 'bora.videojobs.dev/v1/'),
+	'apiPath' => env('API_PATH', 'bora.videojobs.dev/api/v1/'),
 
 ];
