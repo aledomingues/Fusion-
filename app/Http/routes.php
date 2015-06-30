@@ -15,10 +15,24 @@ Route::get('/', 'WelcomeController@index');
 
 Route::get('home', 'HomeController@index');
 
-Route::get('demonstracao', 'DemoController@index');
+Route::get('vantagens', function(){
+	return View::make('layouts.vantagens');
+});
+
+Route::get('demonstracao', function(){
+	return View::make('layouts.demonstracao');
+});
 
 Route::get('contato', function(){
 	return View::make('layouts.contato');
+});
+
+Route::get('termos-de-uso', function(){
+	return View::make('layouts.termos-de-uso');
+});
+
+Route::get('politica-de-privacidade', function(){
+	return View::make('layouts.politica-de-privacidade');
 });
 
 Route::get('register', function(){

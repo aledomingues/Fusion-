@@ -13,7 +13,9 @@ a:hover{
 	color: #fff;
 }
 
-.blue:hover{
+.btn:hover,
+.btn:focus,
+.btn.focus{
 	background: #E56B24;
 	color: #fff;
 }

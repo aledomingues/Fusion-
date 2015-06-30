@@ -17,7 +17,6 @@
         @else
           <li class="login"><a href="{{url('/login')}}">Entrar</a></li>
         @endif
-        
       </ul>
     </div>
 
