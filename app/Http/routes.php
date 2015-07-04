@@ -1,31 +1,3 @@
-
-Skip to content
-This repository
-
-    Pull requests
-    Issues
-    Gist
-
-    @claytoncm
-
-You don't have any verified emails. We recommend verifying at least one email.
-
-Email verification helps our support team verify ownership if you lose account access and allows you to receive all the notifications you ask for.
-
-3
-0
-
-    0
-
-aledomingues/Fusion-
-
-Fusion-/app/Http/routes.php
-@claytoncm claytoncm 5 days ago Criação das páginas do layout
-
-2 contributors
-@claytoncm
-@danielsatiro
-65 lines (50 sloc) 1.557 kB
 <?php
 /*
 |--------------------------------------------------------------------------
@@ -77,7 +49,5 @@ Route::controllers([
 	'password' => 'Auth\PasswordController',
 ]);
 
-    Status API Training Shop Blog About Help 
 
-    © 2015 GitHub, Inc. Terms Privacy Security Contact 
 
