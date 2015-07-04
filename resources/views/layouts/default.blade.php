@@ -11,7 +11,11 @@
 <body>
 	<header>
     	<div class="container">
-            <h1 class="logo"><a class="navbar-brand" href="/"><img src="{{ asset('img/logo-videojobs.png') }}" alt=""></a></h1>
+            @if(! \Session::get('isLogged'))
+                <h1 class="logo"><a class="navbar-brand" href="/"><img src="{{ asset('img/logo-videojobs.png') }}" alt=""></a></h1>
+            @else
+                <h1 class="logo"><a class="navbar-brand" href="/profile"><img src="{{ asset('img/logo-videojobs.png') }}" alt=""></a></h1>
+            @endif
             <nav class="navbar navbar-default">@include('layouts._header')</nav>
         </div>
     </header>
@@ -21,7 +25,8 @@
         </div>
     </div>
     @include('layouts._footer')
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!--<script type="text/javascript" src="{{ URL::asset('js/jquery.min.js')}}"></script>-->
     <script type="text/javascript" src="{{ URL::asset('js/bootstrap.min.js')}}"></script>
     @yield('vj-js')
 </body>

@@ -90,6 +90,69 @@ h1.logo{
 	color: #1b80b3;
 }
 
+/* User */
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    margin: -1px 0 0;
+}
+
+.left{
+	float: left;
+}
+
+.user-submenu{
+	width: 200px;
+}
+
+.user-submenu li a:hover{
+	color: #1b80b3;
+}
+
+#user-controller{
+	cursor: default;
+	float: right;
+	padding-left: 15px;
+}
+
+.caret{
+	margin-left: 10px;
+}
+
+#user-account p{
+	font-weight: bold;
+	margin: 0;
+}
+
+#user-account span{
+	font-size: 13px;
+}
+
+.profile-photo-top{
+	float: left;
+	height: auto;
+	margin-right: 10px;
+	width: 50px;
+}
+
+/* Edit users*/
+
+.profile-image{
+	width: 220px;
+}
+
+.profile-edit{
+	width: calc(100% - 230px);
+}
+
+.bt-editar{
+	background: #1b80b3;
+	border: 0;
+	border-radius: 4px;
+	color: #fff;
+	margin: 0 auto;
+}
+
 /* Menu */
 .navbar{
 
@@ -128,6 +191,10 @@ h1.logo{
 
 #navbar-top a:hover{
 	color: #E56B24;
+}
+
+#navbar-bottom ul{
+
 }
 
 #navbar-bottom a{
