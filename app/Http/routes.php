@@ -9,6 +9,11 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+
+Route::group(['middleware' => 'auth'], function(){
+	Route::get('profile', 'UsersController@profile');
+});
+
 Route::get('/', 'WelcomeController@index');
 Route::get('home', 'HomeController@index');
 Route::get('vantagens', function(){
@@ -33,10 +38,7 @@ Route::get('register', function(){
 Route::get('login', 'UsersController@login');
 Route::post('login', 'UsersController@doLogin');
 Route::get('logout', 'UsersController@logout');
-//Route::get('profile', 'UsersController@profile');
-Route::get('profile', function(){
-	return View::make('users.profile');
-});
+
 Route::get('password', function(){
 	return View::make('auth.password');
 });

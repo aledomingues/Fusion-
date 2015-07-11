@@ -15,7 +15,7 @@ class UsersController extends Controller {
 	public function doLogin() {
 		if (\Session::get('email')){
 			$data = array(
-		      'email' => \Session::get('email'),
+		      'username' => \Session::get('email'),
 		      'password' => \Session::get('password'),
 			);
 
@@ -25,20 +25,35 @@ class UsersController extends Controller {
 			$user = \Input::get();
 
 			$data = array(
-			  'email' => $user['email'],
+			  'username' => $user['email'],
 			  'password' => $user['password'],
 			);
 		}
 
-		$login = APIBackend::post('auth/login', $data);
+		$data['client_id'] =  \Config::get('auth.clientId');
+		$data['client_secret'] =  \Config::get('auth.clientSecret');
+		$data['grant_type'] =  \Config::get('auth.grantType');
+
+		$accessToken = APIBackend::post('oauth/access-token', $data);
 		
-		if($login['return_code'] == 406){
-			return \Response::json($login['response'], $login['return_code']);
+		if($accessToken->info['http_code'] != 200){
+			return \Response::json($accessToken, $accessToken->info['http_code']);
 		}
 
-		if(!empty($login['response']->token)){
+		if(!empty($accessToken->access_token)){
+			unset($accessToken->info);
+
+			\Session::put('accessToken', $accessToken);
+
+			$userData = APIBackend::get('users/user-data');
+
+			if($userData->info['http_code'] != 200){
+				return \Response::json($userData, $userData->info['http_code']);
+			}
+
+			unset($userData->info);
 			\Session::put('isLogged', true);
-			\Session::put('userData', $login['response']);
+			\Session::put('userData', $userData);
 
 			$next = url('profile'); 
 			if (!is_null(\Session::get('next'))){
@@ -52,10 +67,16 @@ class UsersController extends Controller {
 	}
 
 	public function logout() {
+		\Session::forget('accessToken');
 		\Session::forget('isLogged');
 		\Session::forget('userData');
 
 		return \Redirect::to('/');
+	}
+
+	public function profile(){
+		$userData = \Session::get('userData');
+		return view('users.profile', ['userData' => $userData]);
 	}
 
 	/**

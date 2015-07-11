@@ -63,5 +63,9 @@ return [
 		'table' => 'password_resets',
 		'expire' => 60,
 	],
+	
+	'clientId' => env('CLIENT_ID', 1),
+	'clientSecret' => env('CLIENT_SECRET', 'secret'),
+	'grantType' => env('GRANT_TYPE', 'password'),
 
 ];

@@ -4,6 +4,7 @@ abstract class API
 {
 	protected $url;
 	protected $credentials;
+	protected $tokenType;
 
 	public static function post($url, $data){
 		//$data = json_encode($data);
@@ -25,7 +26,7 @@ abstract class API
 		$ch = curl_init($instance->getUrl() . $url);
 
 		if ($instance->getCredentials() != null) :
-			curl_setopt($ch, CURLOPT_HTTPHEADER, array("Authorization: Basic " . base64_encode($instance->getCredentials()), 'Content-Type: application/json'));
+			curl_setopt($ch, CURLOPT_HTTPHEADER, array("Authorization: " . $instance->getTokenType() . " " . $instance->getCredentials(), 'Content-Type: application/json'));
 			curl_setopt($ch, CURLOPT_USERPWD, $instance->getCredentials());
 		endif;
 
@@ -46,7 +47,17 @@ abstract class API
 		// close cURL resource, and free up system resources
 		curl_close($ch);
 
-		return array('response' => json_decode($exec), 'return_code' => $info['http_code']);
+		$result = json_decode($exec);
+		if(is_object($result)){
+			$result->info = $info;
+		}elseif(is_array($result)){
+			$result['info'] = $info;
+		}else{
+			$result = new stdClass;
+			$result->info = $info;
+		}
+
+		return $result;
 	}
 
 	public static function delete($url, $data = array()){
@@ -56,6 +67,10 @@ abstract class API
 
 	public function getUrl(){
 		return \Config::get($this->url);
+	}
+
+	public function getTokenType(){
+		return $this->tokenType;
 	}
 
 	public function getCredentials(){
